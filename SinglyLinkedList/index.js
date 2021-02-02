@@ -1,13 +1,9 @@
-//place of data
-//reference to next node -- next
-
 class Node{
   constructor(val){
     this.val = val;
     this.next = null;
   }
 }
-
 
 class SinglyLinkedList{
   constructor(){
@@ -48,6 +44,15 @@ class SinglyLinkedList{
     }
     return current;
   }
+
+  //SHIFT
+  shift(){
+    if(!this.head) return undefined;
+    var currentHead = this.head;
+    this.head = currentHead.next;
+    this.length--;
+    return currentHead;
+  }
 }
 
 
@@ -57,5 +62,5 @@ list.push('one')
 list.push('two')
 list.push('three')
 list.push('four')
-console.log(list.pop())
+list.shift();
 console.log(list)
