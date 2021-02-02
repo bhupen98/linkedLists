@@ -53,14 +53,31 @@ class SinglyLinkedList{
     this.length--;
     return currentHead;
   }
+
+  unshift(value){
+    var newNode = new Node(value);
+    if(!this.head){
+      this.head = newNode;
+      this.tail = this.head;
+      this.tail.next = null;
+      //include else to stop going next property circular i.e infinitely
+    }else{
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
+  }
+
 }
 
 
 //new list object
 var list = new SinglyLinkedList();
 list.push('one')
-list.push('two')
-list.push('three')
-list.push('four')
+// list.push('two')
+// list.push('three')
+// list.push('four')
 list.shift();
+list.unshift('zero');
 console.log(list)
