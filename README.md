@@ -25,3 +25,23 @@
   * Decrement the lenght by 1
   * return the value of the node returned
  
+## Unshifting Pseudocode
+* the function should accept a value
+* create a new node using a value passed to the function 
+* if there is no head property on this list, set the head and tail to be the
+  newly create node
+* otherwise set the newly create node's next property to  be the current head
+  property on the list
+* set the head property on the list to  be the newly create property
+* increment the length by 1
+* return the linked list  
+  
+## Get Pseudocode
+* Retriving a *node* by it's position in the Linked List
+* this function should accept an index
+* if the index is less than zero or greater then or equal to the length of the
+  list, return null 
+* loop through the list until you reached the index and return the node at that
+  specific index
+  
+
