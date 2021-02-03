@@ -1,9 +1,13 @@
+//place of data
+//reference to next node -- next
+
 class Node{
   constructor(val){
     this.val = val;
     this.next = null;
   }
 }
+
 
 class SinglyLinkedList{
   constructor(){
@@ -45,29 +49,28 @@ class SinglyLinkedList{
     return current;
   }
 
-  //SHIFT
-  shift(){
-    if(!this.head) return undefined;
-    var currentHead = this.head;
-    this.head = currentHead.next;
-    this.length--;
-    return currentHead;
+//Get
+  get(index){
+    if(index < 0 || index >= this.length) return null;
+    var counter = 0;
+    var current = this.head;
+    while(counter !== index){
+      current = current.next;
+      counter++;
+    }
+    return current;
   }
 
-  unshift(value){
-    var newNode = new Node(value);
-    if(!this.head){
-      this.head = newNode;
-      this.tail = this.head;
-      this.tail.next = null;
-      //include else to stop going next property circular i.e infinitely
-    }else{
-      newNode.next = this.head;
-      this.head = newNode;
+  //SET
+  set(index, val){
+    var node = this.get(index);
+    if(node){
+      node.val = val;
+      return true
     }
-    this.length++;
-    return this;
+    return false
   }
+
 
 }
 
@@ -75,9 +78,9 @@ class SinglyLinkedList{
 //new list object
 var list = new SinglyLinkedList();
 list.push('one')
-// list.push('two')
-// list.push('three')
-// list.push('four')
-list.shift();
-list.unshift('zero');
+list.push('two')
+list.push('three')
+list.push('four')
+console.log(list.pop())
 console.log(list)
+console.log("get index", list.get(1))

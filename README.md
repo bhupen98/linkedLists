@@ -37,11 +37,18 @@
 * return the linked list  
   
 ## Get Pseudocode
-* Retriving a *node* by it's position in the Linked List
 * this function should accept an index
 * if the index is less than zero or greater then or equal to the length of the
   list, return null 
 * loop through the list until you reached the index and return the node at that
   specific index
+  
+## Set Pseudocode
+* this function should accept a value and and index
+* Use your get function to find a specific node
+* if node is not found return false
+* if node is found, set the value of that node to be the value passed to the
+  function and return true
+  
   
 

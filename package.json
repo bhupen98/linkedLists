@@ -1,0 +1,12 @@
+{
+  "name": "LinkedLists",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/cococolacode/linkedLists.git",
+  "author": "bhupendra thapa <b707.bt@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^7.0.0",
+    "inquirer": "^7.3.3"
+  }
+}
