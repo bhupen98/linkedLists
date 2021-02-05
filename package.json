@@ -1,7 +1,9 @@
 {
-  "name": "LinkedLists",
+  "name": "linkedlists",
   "version": "1.0.0",
   "main": "index.js",
+  "preferGlobal":true,
+  "bin":"./commands.js",
   "repository": "https://github.com/cococolacode/linkedLists.git",
   "author": "bhupendra thapa <b707.bt@gmail.com>",
   "license": "MIT",

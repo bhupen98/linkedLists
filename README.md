@@ -55,7 +55,7 @@
 * if the index is less then zero or greater then the length, return false
 * if the index is the same as the length, push a new node to the end of the
   list
-* if the is 0, unshift a new node to the start of the list
+* if the index is 0, unshift a new node to the start of the list
 * otherwise, using the get method, access the node at the index -1
 * set the next property on that node to be the new node
 * set the next property on the new node to be the previous next
