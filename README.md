@@ -51,7 +51,7 @@
   function and return true
  
  ## Insert Pseudocode
-* this funcation sholud accept a index and a value
+* this function sholud accept a index and a value
 * if the index is less then zero or greater then the length, return false
 * if the index is the same as the length, push a new node to the end of the
   list

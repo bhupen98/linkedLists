@@ -33,7 +33,6 @@ class SinglyLinkedList{
     }
     this.length++;
     this.printLists()
-    return this;
   }
 
 // POP
@@ -52,7 +51,7 @@ class SinglyLinkedList{
       this.head = null;
       this.tail = null;
     }
-    return current;
+    this.printLists();
   }
   
   //SHIFT
@@ -61,7 +60,7 @@ class SinglyLinkedList{
     var current = this.head;
     this.head = current.next;
     this.length--;
-    return current
+    this.printLists();
   }
 
   //UNSHIFT
@@ -74,7 +73,7 @@ class SinglyLinkedList{
     newNode.next = this.head;
     this.head = newNode;
     this.length++;
-    return this;
+    this.printLists();
   }
 
 //Get
@@ -91,10 +90,11 @@ class SinglyLinkedList{
 
   //SET
   set(index, val){
+    console.log(index, val)
     var node = this.get(index);
     if(node){
       node.val = val;
-      return true
+      return this.printLists()
     }
     return false
   }
@@ -104,9 +104,15 @@ class SinglyLinkedList{
   insert(index, val){
     if(index < 0 || index > this.length) return false;
     if(index === this.length) return this.push(val);
-    if(index === 0){
-
-    }
+    if(index === 0) return this.unshift();
+    var newNode = new Node(val)
+    var prev = this.get(index-1);
+    var temp = prev.next;
+    prev.next = newNode;
+    newNode.next = temp;
+    this.length++;
+    this.printLists();
+    return true;
   }
 }
 
@@ -115,12 +121,3 @@ module.exports = {
 }
 
 
-//new list object
-// var list = new SinglyLinkedList();
-// list.push('one')
-// list.push('two')
-// list.push('three')
-// list.push('four')
-// console.log(list.pop())
-// console.log(list)
-// console.log("get index", list.get(1))

@@ -17,7 +17,10 @@ const actionQ = [
       'push',
       'pop',
       'shift',
-      'unshift'
+      'unshift',
+      'get',
+      'set',
+      'insert'
     ]
   }
 ]
@@ -31,11 +34,20 @@ const valQ = [
   }
 ]
 
+//index question
+const indexQ = [
+  {
+    type:'number',
+    name:'index',
+    message:' Enter a index?'
+  }
+]
+
 const continueQ = [
   {
     type:'list',
     name:'continue',
-    message:'Do you want to apply more action to the list?',
+    message:'Do you want to continue?',
     choices:[
       'Yes',
       'No'
@@ -43,7 +55,7 @@ const continueQ = [
   }
 ]
 
-//global variables
+// list object
 var list = new SinglyLinkedList();
 
 //watch continue or not
@@ -52,6 +64,7 @@ async function watchContinue(){
     continueAns.continue === 'Yes' ? action():null;
 }
 
+//list action
 async function action(){
   const actionAns = await prompt(actionQ);
   if ( actionAns.action === 'print'){
@@ -59,23 +72,44 @@ async function action(){
     watchContinue();
   }else if(actionAns.action === 'push'){
     const valAns = await prompt(valQ)
-    //push new value
+    //push new Node
     list.push(valAns.value);
-    //add more value or quit
     watchContinue();
   }else if(actionAns.action === 'pop'){
+    //pop Node
     list.pop();
     watchContinue()
   }else if(actionAns.action === 'shift'){
+    //shift Node
     list.shift();
     watchContinue()
   }else if(actionAns.action === 'unshift'){
     const valAns = await prompt(valQ);
+    // unShift new Node
     list.unshift(valAns.value);
     watchContinue();
+  }else if(actionAns.action === 'get'){
+    const indexAns = await prompt(indexQ);
+    list.get(indexAns.value);
+    watchContinue()
+  }else if(actionAns.action === 'set'){
+    //get a index 
+    const indexAns = await prompt(indexQ);
+    //get a value
+    const valAns = await prompt(valQ);
+    list.set(indexAns.index, valAns.value);
+    watchContinue()
+  }else if(actionAns.action === 'insert'){
+    //get an index
+    const indexAns = await prompt(indexQ);
+    //get a value
+    const valAns = await prompt(valQ);
+    list.insert(indexAns.index, valAns.value);
+    watchContinue()
   }
 }
 
+//program version and description
 program
   .version('0.1.1')
   .description('datastructures and algorithms');
@@ -86,7 +120,7 @@ program
   .alias('l')
   .description('manipulate lists')
   .action(() => {
-    action()
+    action();
   })
 
 
