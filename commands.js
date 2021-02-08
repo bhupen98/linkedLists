@@ -90,7 +90,8 @@ async function action(){
     watchContinue();
   }else if(actionAns.action === 'get'){
     const indexAns = await prompt(indexQ);
-    list.get(indexAns.value);
+const node = list.get(indexAns.index);
+    console.log(node)
     watchContinue()
   }else if(actionAns.action === 'set'){
     //get a index 

@@ -90,10 +90,9 @@ class SinglyLinkedList{
 
   //SET
   set(index, val){
-    console.log(index, val)
-    var node = this.get(index);
-    if(node){
-      node.val = val;
+    var currentNode = this.get(index);
+    if(currentNode){
+      currentNode.val = val;
       return this.printLists()
     }
     return false
@@ -111,8 +110,20 @@ class SinglyLinkedList{
     prev.next = newNode;
     newNode.next = temp;
     this.length++;
-    this.printLists();
+    this.printLists()
     return true;
+  }
+
+  //REMOVE
+  remove(index){
+    if(index < 0 || index > this.length) return undefined;
+    if(index === this.length-1) return this.pop();
+    if(index === 0) return  this.shift();
+    var prevNode = this.get(index-1);
+    var removedNode = prev.next;
+    prevNode.next = removedNode.next;
+    this.length--;
+    return removedNode;
   }
 }
 
