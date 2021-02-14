@@ -1,5 +1,4 @@
-//place of data
-//reference to next node -- next
+const chalk = require('chalk');
 
 class Node{
   constructor(val){
@@ -9,17 +8,13 @@ class Node{
 }
 
 
-class SinglyLinkedList{
+class SinglyLinkedLists{
   constructor(){
     this.head = null;
     this.tail = null;
     this.length = 0;
   }
 
-  //print lists
-  printLists(){
-    console.log(this)
-  }
 
   // PUSH
   push(val){
@@ -125,10 +120,40 @@ class SinglyLinkedList{
     this.length--;
     return removedNode;
   }
+
+  //REVERSE
+  reverse(){
+    var node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    var prev = null;
+    var next;
+    var pointer = 0;
+    while(pointer !== this.length){
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+      pointer++;
+    }
+    return this.printLists()
+  }
+
+
+  //print lists
+  printLists(){
+    var arr = [];
+    var current = this.head;
+    while(current){
+      arr.push(current.val);
+      current = current.next;
+    }
+    console.log(chalk.magenta.underline( arr ))
+  }
 }
 
 module.exports = {
-  SinglyLinkedList
+  SinglyLinkedLists
 }
 
 

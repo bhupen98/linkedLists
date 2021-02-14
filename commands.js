@@ -2,8 +2,8 @@
 const program = require('commander');
 const {prompt} = require('inquirer');
 const {
-  SinglyLinkedList
-}  = require('./SinglyLinkedList/index');
+  SinglyLinkedLists
+}  = require('./SinglyLinkedLists/index');
 
 // QUESTIONS
 //List action question
@@ -20,7 +20,8 @@ const actionQ = [
       'unshift',
       'get',
       'set',
-      'insert'
+      'insert',
+      'reverse'
     ]
   }
 ]
@@ -56,7 +57,7 @@ const continueQ = [
 ]
 
 // list object
-var list = new SinglyLinkedList();
+var list = new SinglyLinkedLists();
 
 //watch continue or not
 async function watchContinue(){
@@ -106,6 +107,9 @@ const node = list.get(indexAns.index);
     //get a value
     const valAns = await prompt(valQ);
     list.insert(indexAns.index, valAns.value);
+    watchContinue()
+  }else if(actionAns.action === 'reverse'){
+    list.reverse();
     watchContinue()
   }
 }

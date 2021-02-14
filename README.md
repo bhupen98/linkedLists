@@ -8,8 +8,6 @@
   * Set the tail property to be newly created node as well
   * increment the length by one
 
-
-
 ## Popping Pseudocode
   * If there is no nodes in the list, return undefined
   * Loop through the list until you reached the tail 
@@ -71,4 +69,29 @@
   * set next property on that node to be the next of the next node
   * decrement the length by 1
   * return the value of the node returned
+
+## Reverse Pseudocode
+* swap the head and tail 
+  * create a variable called next
+  * create a variable called prev
+  * create a variable called node and initialize it to the head property
+  * loop through the list
+  * set next to be the next property on whatever node is 
+  * set the next property on the node to be whatever prev is
+  * set prev to be the value of the node variable
+  * set the node variable to be the value of the next variable 
+
+## Big O of Singly Linked lists
+  **insertion** --> O(1)
+  **Removal** --> It depends... O(1) or O(N))
+  **Searching** -->   O(N)
+  **Access**--> O(N)
+
+## Important Notes
+  * Singly Linked lists are an excellent alternative to arrays when insertion and
+    deletion at the beginning are frequently required
+  * Arrays contain a build in index whereas Linked Lists do not
+  * the idea of a list data structures that consists of nodes is the foundation
+    for other datastructures like stacks and queues
+    
 
