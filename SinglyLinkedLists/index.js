@@ -142,13 +142,7 @@ class SinglyLinkedLists{
 
   //print lists
   printLists(){
-    var arr = [];
-    var current = this.head;
-    while(current){
-      arr.push(current.val);
-      current = current.next;
-    }
-    console.log(chalk.magenta.underline( arr ))
+    console.log(this)
   }
 }
 

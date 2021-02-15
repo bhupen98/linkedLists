@@ -1,4 +1,4 @@
-
+# Singly Linked Lists
 ## Pushing Pseudocode
   * This function should accept a value
   * Create  a new node using the value passed to the function 
@@ -94,4 +94,12 @@
   * the idea of a list data structures that consists of nodes is the foundation
     for other datastructures like stacks and queues
     
-
+# Doubly Linked Lists
+## Push Pseudocode
+* Create a new node with the value passed to the function 
+*   if the head property is null set the head and tail to be the newly created
+    node
+* otherwise, set the next property on the tail to be that node
+* set the previous property on the newly created node to be  the tail
+* set the tail to be a  newly create node
+* increament the length by 1
