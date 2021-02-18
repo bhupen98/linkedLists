@@ -85,25 +85,30 @@ async function watchContinue(ll){
 async function action(ll){
   const actionAns = await prompt(actionQ);
   if ( actionAns.action === 'print'){
-    ll === 'sl' ? sLists.printLists() : ll === 'dl' ? dLists.printLists(): null;
+    ll === 'sl' ? sLists.printLists() :
+      ll === 'dl' ? dLists.printLists(): null;
     watchContinue(ll);
   }else if(actionAns.action === 'push'){
     const valAns = await prompt(valQ)
     //push new Node
-    ll === 'sl' ? sLists.push(valAns.value): ll === 'dl' ? dLists.push(valAns.value): null;
+    ll === 'sl' ? sLists.push(valAns.value): 
+      ll === 'dl' ? dLists.push(valAns.value): null;
     watchContinue(ll);
   }else if(actionAns.action === 'pop'){
     //pop Node
-    ll === 'sl' ? sLists.pop(): ll === 'dl' ? dLists.pop():null;
+    ll === 'sl' ? sLists.pop():
+      ll === 'dl' ? dLists.pop():null;
     watchContinue(ll)
   }else if(actionAns.action === 'shift'){
     //shift Node
-    ll === 'sl' ? sLists.shift(): ll === 'dl' ? dLists.shift(): null;
+    ll === 'sl' ? sLists.shift():
+      ll === 'dl' ? dLists.shift(): null;
     watchContinue(ll)
   }else if(actionAns.action === 'unshift'){
     const valAns = await prompt(valQ);
     // unShift new Node
-    ll === 'sl' ? sLists.unshift(valAns.value): ll === 'dl' ? dLists.unshift(valAns.value):null;
+    ll === 'sl' ? sLists.unshift(valAns.value):
+      ll === 'dl' ? dLists.unshift(valAns.value):null;
     watchContinue(ll);
   }else if(actionAns.action === 'get'){
     const indexAns = await prompt(indexQ);
@@ -115,17 +120,20 @@ async function action(ll){
     const indexAns = await prompt(indexQ);
     //get a value
     const valAns = await prompt(valQ);
-    ll === 'sl' ? sLists.set(indexAns.index, valAns.value): ll === 'dl' ? dLists.set(indexAns.index, valAns.value):null;
+    ll === 'sl' ? sLists.set(indexAns.index, valAns.value):
+      ll === 'dl' ? dLists.set(indexAns.index, valAns.value):null;
     watchContinue()
   }else if(actionAns.action === 'insert'){
     //get an index
     const indexAns = await prompt(indexQ);
     //get a value
     const valAns = await prompt(valQ);
-    ll === 'sl' ? sLists.insert(indexAns.index, valAns.value): ll === 'dl' ? dLists.insert(indexAns.index, valAns.value):null;
+    ll === 'sl' ? sLists.insert(indexAns.index, valAns.value):
+      ll === 'dl' ? dLists.insert(indexAns.index, valAns.value):null;
     watchContinue()
   }else if(actionAns.action === 'reverse'){
-    ll === 'sl' ? sLists.reverse(): ll === 'dl' ? dLists.reverse():null;
+    ll === 'sl' ? sLists.reverse():
+      ll === 'dl' ? dLists.reverse():null;
     watchContinue()
   }
 }

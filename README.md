@@ -96,10 +96,30 @@
     
 # Doubly Linked Lists
 ## Push Pseudocode
-* Create a new node with the value passed to the function 
-*   if the head property is null set the head and tail to be the newly created
-    node
-* otherwise, set the next property on the tail to be that node
-* set the previous property on the newly created node to be  the tail
-* set the tail to be a  newly create node
-* increament the length by 1
+  * Create a new node with the value passed to the function 
+  *   if the head property is null set the head and tail to be the newly created
+      node
+  * otherwise, set the next property on the tail to be that node
+  * set the previous property on the newly created node to be  the tail
+  * set the tail to be a  newly create node
+  * increament the length by 1
+
+## Pop Pseudocode
+  * if there is no head or length is 0, return undefined
+  * store the current tail in a variable to return later
+  * if the length is 1, set the head and the tail to be null
+  * update the tail to be the previous Node
+  * set the new tail's next to null
+  * decrement the length
+  * print lists
+
+## Shifting Pseudocode
+  * if length is 0, return undefined
+  * store the current head property in a variable(we'll call it old head)
+  * if the length is one set the head to be null and also set the tail to be
+    null
+  * update the head to be the next 
+  * set the head's previous property to be null
+  * set the old head's next to null
+  * decrement the length by 1
+  * print lists
