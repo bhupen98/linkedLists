@@ -171,4 +171,21 @@
 * set the next and prev to null on the found node
 * decrement the length
 
+## Comparing Singly and Doubly Linked Lists
+###  Big O of Doubly Linked Lists
+**Insertion** -> O(1)
+**Removal** -> O(1)
+**Searching** -> O(N)
+**Access** -> O(N)
+
+**Notes**
+* Doubly Linked Lists are almost identical to Singly Linked Lists except there
+  is an additional pointer to previous nodes
+* Better then Singly Linked Lists for finding nodes and can be done in half the
+  time
+* However, they do take up more memory considering the extra  pointer
+
+ 
+
+
 
