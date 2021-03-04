@@ -112,9 +112,10 @@ async function action(ll){
     watchContinue(ll);
   }else if(actionAns.action === 'get'){
     const indexAns = await prompt(indexQ);
-    const node = sLists.get(indexAns.index);
+    var node = ll === 'sl' ? sLists.get(indexAns.index):
+      ll==='dl'?dLists.get(indexAns.index):null;
     console.log(node)
-    watchContinue()
+    watchContinue(ll)
   }else if(actionAns.action === 'set'){
     //get a index 
     const indexAns = await prompt(indexQ);
@@ -122,7 +123,7 @@ async function action(ll){
     const valAns = await prompt(valQ);
     ll === 'sl' ? sLists.set(indexAns.index, valAns.value):
       ll === 'dl' ? dLists.set(indexAns.index, valAns.value):null;
-    watchContinue()
+    watchContinue(ll)
   }else if(actionAns.action === 'insert'){
     //get an index
     const indexAns = await prompt(indexQ);
@@ -130,11 +131,11 @@ async function action(ll){
     const valAns = await prompt(valQ);
     ll === 'sl' ? sLists.insert(indexAns.index, valAns.value):
       ll === 'dl' ? dLists.insert(indexAns.index, valAns.value):null;
-    watchContinue()
+    watchContinue(ll)
   }else if(actionAns.action === 'reverse'){
     ll === 'sl' ? sLists.reverse():
       ll === 'dl' ? dLists.reverse():null;
-    watchContinue()
+    watchContinue(ll)
   }
 }
 

@@ -27,7 +27,7 @@ class SinglyLinkedLists{
       this.tail = newNode;
     }
     this.length++;
-    this.printLists()
+    this.printLists();
   }
 
 // POP
@@ -80,7 +80,7 @@ class SinglyLinkedLists{
       current = current.next;
       counter++;
     }
-    return current;
+    console.log(current)
   }
 
   //SET

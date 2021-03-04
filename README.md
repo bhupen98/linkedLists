@@ -113,13 +113,62 @@
   * decrement the length
   * print lists
 
-## Shifting Pseudocode
+## Shift Pseudocode
   * if length is 0, return undefined
   * store the current head property in a variable(we'll call it old head)
-  * if the length is one set the head to be null and also set the tail to be
-    null
+* if the length is 0, set the head and tail property to be null
   * update the head to be the next 
   * set the head's previous property to be null
   * set the old head's next to null
   * decrement the length by 1
   * print lists
+
+## Unshift Pseudocode
+  * create a new node with the value passed to the function 
+  * if the length is 0, set the head and tail property to be null
+  * otherwise, set the prev property on the head of the list  to be the new node
+  * set the next property on the new node to be the head property
+  * update the head to be the new node
+  * increment the length 
+  * print list
+
+## Get Pseudocode
+  * if the index in less than 0 or greater then or equal to the length, return
+    null
+  * if the index is less then or equal to half the length of the list, loop
+    through the list starting from the head and loop toward then middle and
+    return the node once it is found
+  * otherwise, if the index is greater than half the length of the list, loop
+    through the list starting from the tail and loop towards the middle and
+    return the node once it is found
+  
+  
+## Set Pseudocode
+  * Create a variable which is the result of the get method at the index
+      passed to the function 
+  * if the get method returns a vaild node, set the value of that node to be the
+    value passed and return true 
+  * otherwise, return false
+  
+## Insert Pseudocode
+  * If the index is less than 0 or greater then or equal to the length return
+    false
+  * if the index is 0, **unshift**
+  * if the index is same as the length, **push**
+  * use the **get** method to access the index-1
+  * set the next and prev properties on the correct nodes to link everything
+    together
+  * increment the length by 1
+  * return true
+
+## Remove pseudocode
+* If the index is less than zero or greater than or equal to the length
+  return undefined
+* if the index is 0, **shift**
+* if the index is the same as the length-1, **pop**
+* use the get method to retrive the item to be removed  
+* update the next and prev property to remove the found node from the list
+* set the next and prev to null on the found node
+* decrement the length
+
+
